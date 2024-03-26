@@ -1,1 +1,1 @@
-python gpt_query_experiment.py
+python3 benchmark.py
