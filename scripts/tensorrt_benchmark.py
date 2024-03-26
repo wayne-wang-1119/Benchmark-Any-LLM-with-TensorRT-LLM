@@ -8,7 +8,6 @@ import time
 # Adapt this function to call your TensorRT-LLM benchmark script and return latency
 def benchmark_tensorrt_llm(input_length, output_length):
     start_time = time.time()
-    # Example command, replace with your actual TensorRT-LLM benchmark command
     command = f"python3 benchmark.py -m mixtral_7b --mode plugin --batch_size 1 --input_output_len {input_length},{output_length}"
     subprocess.run(command.split(), capture_output=True)
     end_time = time.time()
@@ -18,9 +17,10 @@ def benchmark_tensorrt_llm(input_length, output_length):
 def worker_task(_):
     latencies = []
     for _ in range(32):  # Each worker performs 32 calls
-        # Example: random lengths, replace with your actual distributions
-        input_length = int(np.random.normal(60, 10))
-        output_length = int(np.random.normal(20, 5))
+        prompt_length = int(np.random.normal(loc=50, scale=15))
+        input_length = max(5, min(prompt_length, 100))
+        max_tokens = int(np.random.normal(loc=200, scale=50))
+        output_length = max(50, min(max_tokens, 512))
         latency = benchmark_tensorrt_llm(input_length, output_length)
         latencies.append(latency)
     return latencies
