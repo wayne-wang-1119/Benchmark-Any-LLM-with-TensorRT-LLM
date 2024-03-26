@@ -24,13 +24,16 @@ python3 -c "import tensorrt_llm"
 
 # if not installed, do the following before moving to next step
 
-apt-get git
+apt-get install sudo
+apt-get install git
 sudo apt-get install git-lfs
 
 # Next Step: If installed LFS do the following
 
 # Problem: This took me quite a lot of time, optimize build?
 
+cd home/
+git clone https://github.com/NVIDIA/TensorRT-LLM.git
 pip install -r examples/mixtral/requirements.txt
 git lfs install
 
