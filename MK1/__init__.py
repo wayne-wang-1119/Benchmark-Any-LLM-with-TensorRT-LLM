@@ -1,7 +1,7 @@
 import modal
 
 Model = modal.Cls.lookup(
-    "mk1-flywheel-latest-llama2-7b-chat", "Model", workspace="mk1"
+    "mk1-flywheel-latest-mixtral-7b-chat", "Model", workspace="mk1"
 ).with_options(
     gpu=modal.gpu.A10G(),
 )
