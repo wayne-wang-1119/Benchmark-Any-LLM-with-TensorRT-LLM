@@ -9,7 +9,7 @@ import time
 def benchmark_tensorrt_llm(input_length, output_length):
     start_time = time.time()
     # Example command, replace with your actual TensorRT-LLM benchmark command
-    command = f"python benchmark.py -m mixtral_7b --mode plugin --batch_size 1 --input_output_len {input_length},{output_length}"
+    command = f"python3 benchmark.py -m mixtral_7b --mode plugin --batch_size 1 --input_output_len {input_length},{output_length}"
     subprocess.run(command.split(), capture_output=True)
     end_time = time.time()
     return end_time - start_time
