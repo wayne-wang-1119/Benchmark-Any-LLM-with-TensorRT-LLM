@@ -1,1 +1,1 @@
-python3 tensorrt_benchmark.py
+python3 scripts/tensorrt_benchmark.py
