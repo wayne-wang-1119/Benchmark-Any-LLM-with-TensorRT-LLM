@@ -1,0 +1,1 @@
+python3 tensorrt_benchmark.py
