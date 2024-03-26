@@ -56,7 +56,7 @@ def app():
         "mk1-flywheel-latest-mistral-7b-instruct", "Model", workspace="mk1"
     ).with_options(
         gpu=modal.gpu.A10G(),
-        timeout=600,
+        timeout=100000,
     )
     model = Model()
 
