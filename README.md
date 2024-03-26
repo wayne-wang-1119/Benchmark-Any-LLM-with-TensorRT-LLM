@@ -42,3 +42,5 @@ python benchmark.py \
  --mode plugin \
  --batch_size "1;8;64" \
  --input_output_len "60,20;128,20"
+
+http://localhost:8002/throughput_vs_latency.png
